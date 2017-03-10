@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context="io.github.jjayyyyyyy.lit.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/weather"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/weather"
+            style="@style/CategoryStyle"
+            android:text="@string/weather" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/dict"
+        android:orientation="vertical">
+
+        <SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:queryHint="@string/word_to_search" />
+
+        <TextView
+            android:id="@+id/translation"
+            style="@style/CategoryStyle"
+            android:layout_height="match_parent"
+            android:text="@string/dict" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/hackerNews">
+
+        <TextView
+            android:id="@+id/hacker_news"
+            style="@style/CategoryStyle"
+            android:text="@string/hacker_news" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/solidot">
+
+        <TextView
+            android:id="@+id/solidot"
+            style="@style/CategoryStyle"
+            android:text="@string/solidot" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/newsflash"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/newsflash"
+            style="@style/CategoryStyle"
+            android:text="@string/newsflash" />
+    </LinearLayout>
+
+</LinearLayout>
