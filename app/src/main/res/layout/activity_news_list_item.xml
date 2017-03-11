@@ -8,9 +8,11 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/news_title"
+        android:id="@+id/news_list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#4A312A"
+        android:textSize="16sp"
         tools:text="hello" />
 
 </LinearLayout>

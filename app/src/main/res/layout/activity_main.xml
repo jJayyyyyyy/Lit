@@ -33,13 +33,13 @@
         <SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="40dp"
             android:queryHint="@string/word_to_search" />
 
         <TextView
             android:id="@+id/translation"
             style="@style/CategoryStyle"
-            android:layout_height="match_parent"
+
             android:text="@string/dict" />
     </LinearLayout>
 
