@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,13 +21,16 @@
         </activity>
         <activity
             android:name=".HackerNewsActivity"
-            android:label="@string/hacker_news"></activity>
+            android:label="@string/hacker_news"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SolidotActivity"
-            android:label="@string/solidot"></activity>
+            android:label="@string/solidot"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".NewsflashActivity"
-            android:label="@string/newsflash"></activity>
+            android:label="@string/newsflash"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
