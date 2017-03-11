@@ -31,6 +31,7 @@ public class Request {
 
     private String readFromStream(InputStream inputStream) throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
+
         if (inputStream != null) {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, Charset.forName("UTF-8"));
             BufferedReader reader = new BufferedReader(inputStreamReader);
@@ -66,7 +67,7 @@ public class Request {
                 strResp = readFromStream(inputStream);
             }
         } catch (IOException e) {
-            return null;
+
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
@@ -75,7 +76,6 @@ public class Request {
                 inputStream.close();
             }
         }
-
         return strResp;
     }
 
