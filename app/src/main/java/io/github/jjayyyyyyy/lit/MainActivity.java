@@ -1,12 +1,16 @@
 package io.github.jjayyyyyyy.lit;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,18 +21,22 @@ public class MainActivity extends AppCompatActivity {
     private static final String URL_WEATHER_SH = "http://m.weather.com.cn/mweather/101020100.shtml";
     private static final String URL_DICT_BASE = "http://dict.youdao.com/fsearch?q=";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         // Click to get the Weather of today and tomorrow
         TextView weather = (TextView) findViewById(R.id.weather);
         weather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new WeatherAsyncTask().execute(URL_WEATHER_HZ);
+                if(hasNetwork()){
+                    new WeatherAsyncTask().execute(URL_WEATHER_HZ);
+                }else {
+                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -39,7 +47,11 @@ public class MainActivity extends AppCompatActivity {
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                new TranslationAsyncTask().execute(URL_DICT_BASE + query);
+                if(hasNetwork()){
+                    new TranslationAsyncTask().execute(URL_DICT_BASE + query);
+                }else {
+                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                }
                 return false;
             }
 
@@ -55,8 +67,12 @@ public class MainActivity extends AppCompatActivity {
         hackerNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent hackerNewsIntent = new Intent(MainActivity.this, HackerNewsActivity.class);
-                startActivity(hackerNewsIntent);
+                if(hasNetwork()){
+                    Intent hackerNewsIntent = new Intent(MainActivity.this, HackerNewsActivity.class);
+                    startActivity(hackerNewsIntent);
+                }else {
+                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -66,8 +82,12 @@ public class MainActivity extends AppCompatActivity {
         solidot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent solidotIntent = new Intent(MainActivity.this, SolidotActivity.class);
-                startActivity(solidotIntent);
+                if(hasNetwork()){
+                    Intent solidotIntent = new Intent(MainActivity.this, SolidotActivity.class);
+                    startActivity(solidotIntent);
+                }else {
+                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -77,12 +97,21 @@ public class MainActivity extends AppCompatActivity {
         newsflash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newsflashIntent = new Intent(MainActivity.this, NewsflashActivity.class);
-                startActivity(newsflashIntent);
+                if(hasNetwork()){
+                    Intent newsflashIntent = new Intent(MainActivity.this, NewsflashActivity.class);
+                    startActivity(newsflashIntent);
+                }else {
+                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
+    private boolean hasNetwork() {
+        ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+        return (networkInfo != null && networkInfo.isConnected());
+    }
 
     // custom AsyncTask to get Weather from m.weather.com.cn
     private class WeatherAsyncTask extends AsyncTask<String, Void, ArrayList<String>> {
