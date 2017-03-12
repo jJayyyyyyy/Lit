@@ -1,11 +1,11 @@
 #	Lit <img alt="ic_launcher" src="./assets/ic_launcher.png" width="32"/>
 
 <div>
-<a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="CC-BY--NC--SA" style="border-width:0" src="./assets/CC-BY--NC--SA-brightgreen.svg" /></a>
+<a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="CC-BY--NC--SA" style="border-width:0" src="./assets/CC-BY--NC--SA-brightgreen.svg"></img></a>
 
-<a rel="mit-license" href="http://opensource.org/licenses/mit-license.php"><img alt="MIT-License" style="border-width:0" src="./assets/License-MIT License-blue.svg" /></a>
+<a rel="mit-license" href="http://opensource.org/licenses/mit-license.php"><img alt="MIT-License" style="border-width:0" src="./assets/License-MIT License-blue.svg"></img></a>
 
-<img alt="Lollipop" style="border-width:0" src="./assets/Android-Lollipop+-orange.svg" />
+<img alt="Lollipop" style="border-width:0" src="./assets/Android-Lollipop+-orange.svg"></img>
 </div>
 
 **Lit** is a Lite Info Toolkit. It's like some kind of RSS reader with weather-and-dict query feature.
