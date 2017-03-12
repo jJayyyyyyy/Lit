@@ -18,6 +18,12 @@ The installer is located in the **`Lit/installer/`** folder.
 
 Lit is about the size of 1.4MB and needs access to network. 
 
+##	Development
+
+*	Android Studio 2.2 for MAC
+*  JDK embeded in Android Studio 2.2
+*	API 21: Android 5.0 (Lollipop)
+
 ##	Layout
 
 <table>
