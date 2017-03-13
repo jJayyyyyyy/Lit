@@ -102,3 +102,6 @@ Approximate mobile traffic consumption of each query is list below.
 *	TextView
 	*	[Stack Overflow, setTextSize()](http://stackoverflow.com/questions/11590538/dpi-value-of-default-large-medium-and-small-text-views-android)
 	*	[马会东, setTextSize()](http://www.cnblogs.com/duanweishi/p/4449588.html)
+
+*	URLEncoding
+	*	[Oracle Docs, URLEncoder](https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html)

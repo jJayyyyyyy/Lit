@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -85,7 +87,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 if(hasNetwork()){
-                    new TranslationAsyncTask().execute(URL_DICT_BASE + query);
+                    try {
+                        new TranslationAsyncTask().execute(URL_DICT_BASE + URLEncoder.encode(query, "UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                 }else {
                     Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
                 }
