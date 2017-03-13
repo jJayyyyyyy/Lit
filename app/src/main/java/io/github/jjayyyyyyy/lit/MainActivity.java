@@ -7,8 +7,12 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.TypedValue;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,28 +21,61 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String URL_WEATHER_HZ = "http://m.weather.com.cn/mweather/101210101.shtml";
     private static final String URL_WEATHER_SH = "http://m.weather.com.cn/mweather/101020100.shtml";
-    private static final String URL_DICT_BASE = "http://dict.youdao.com/fsearch?q=";
+    private static final String URL_WEATHER_HA = "http://m.weather.com.cn/mweather/101190502.shtml";
+    private static final String URL_WEATHER_HZ = "http://m.weather.com.cn/mweather/101210101.shtml";
+    private static final String URL_WEATHER_PJ = "http://m.weather.com.cn/mweather/101210902.shtml";
 
+    private static final String URL_DICT_BASE = "http://dict.youdao.com/fsearch?q=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Click to get the Weather of today and tomorrow
-        TextView weather = (TextView) findViewById(R.id.weather);
-        weather.setOnClickListener(new View.OnClickListener() {
+        final ArrayList<String> cityList = new ArrayList<>();
+        cityList.add(URL_WEATHER_SH);
+        cityList.add(URL_WEATHER_HA);
+        cityList.add(URL_WEATHER_HZ);
+        cityList.add(URL_WEATHER_PJ);
+
+
+        Spinner spinner = (Spinner) findViewById(R.id.city_spinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.city_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                if(hasNetwork()){
-                    new WeatherAsyncTask().execute(URL_WEATHER_HZ);
-                }else {
-                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+            public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                if(pos!=0){
+                    if(hasNetwork()){
+                        new WeatherAsyncTask().execute(cityList.get(pos-1));
+                    }else {
+                        Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                return;
+            }
         });
+
+        // Click to get the Weather of today and tomorrow
+//        TextView weather = (TextView) findViewById(R.id.weather);
+//        weather.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(hasNetwork()){
+//                    new WeatherAsyncTask().execute(URL_WEATHER_HZ);
+//                }else {
+//                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
 
 
         // Translate EN to/from CN
@@ -138,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 if (weatherList != null && weatherList.size() != 0) {
                     TextView weatherView = (TextView) findViewById(R.id.weather);
                     if (weatherList.size() == 2) {
+                        weatherView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
                         weatherView.setText(weatherList.get(0) + weatherList.get(1));
                     }
                 }

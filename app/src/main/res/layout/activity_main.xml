@@ -20,7 +20,19 @@
         <TextView
             android:id="@+id/weather"
             style="@style/CategoryStyle"
-            android:text="@string/weather" />
+            android:text="@string/weather"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            />
+        <Spinner
+            android:id="@+id/city_spinner"
+            android:layout_width="24dp"
+            android:layout_margin="8dp"
+
+            android:layout_height="match_parent"
+            android:entries="@array/city_array"
+            android:spinnerMode="dialog"
+            />
     </LinearLayout>
 
     <LinearLayout

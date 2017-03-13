@@ -108,7 +108,7 @@ public class Request {
         }
 
         if (mTomorrow.find()) {
-            weatherList.add(String.format("%s    %s/%s    %s\n", mTomorrow.group(1), mTomorrow.group(2), mTomorrow.group(3), mTomorrow.group(4)));
+            weatherList.add(String.format("%s    %s/%s    %s", mTomorrow.group(1), mTomorrow.group(2), mTomorrow.group(3), mTomorrow.group(4)));
         }
 
         return weatherList;

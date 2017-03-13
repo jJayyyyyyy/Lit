@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="city_array">
+        <item>--------------Choose Your City--------------</item>
+        <item>Shang Hai</item>
+        <item>Hai An</item>
+        <item>Hang Zhou</item>
+        <item>Pu Jiang</item>
+    </string-array>
+</resources>
