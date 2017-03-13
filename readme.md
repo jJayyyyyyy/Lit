@@ -14,9 +14,9 @@ Basically this collection of tools were written in Python and used on PC. Since 
 
 ##	Installation
 
-The installer is located in the **`Lit/installer/`** folder. 
+The installer is located in the **[Lit/installer/](https://github.com/jJayyyyyyy/Lit/tree/master/installer)** folder. 
 
-Lit is about the size of 1.4MB and needs access to network. 
+Lit-installer is about the size of 1.4MB and needs access to network.
 
 ##	Development
 
@@ -71,14 +71,34 @@ Approximate mobile traffic consumption of each query is list below.
 
 ##	Reference
 
-*	[Udacity, Android Basics](https://www.udacity.com/courses/android)
-*	[Android Devloper Doc](https://developer.android.com/index.html)
-*	[Common_Android_Views_Cheat_Sheet](http://cn-static.udacity.com/nd801/Common_Android_Views_Cheat_Sheet.pdf)
-*	[Material Design](https://material.io/)
-*	[Oracle Docs, Class Pattern](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
-*	[TutorialsPoint, Java Regex](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
-*	[TutorialsPoint, Android JSON Parser](https://www.tutorialspoint.com/android/android_json_parser.htm)
-*	[CuriousConcept, json formatter](https://jsonformatter.curiousconcept.com/)
-*	[CSDN leesren, Java正则表达式转义](http://blog.csdn.net/csr0312/article/details/17016709)
-*	[Stack Overflow, Android disable landscpe mode](http://stackoverflow.com/a/582585/5584850)
-*	[Shields, make badge](http://shields.io/)
+*	Badge
+	*	[Shields, make nice badge](http://shields.io/)
+
+*	Basics
+	*	[Udacity, Android Basics](https://www.udacity.com/courses/android)
+	*	[Android Devloper Doc](https://developer.android.com/index.html)
+	*	[Common_Android_Views_Cheat_Sheet](http://cn-static.udacity.com/nd801/Common_Android_Views_Cheat_Sheet.pdf)
+	*	[Material Design](https://material.io/)
+
+*	Json
+	*	[TutorialsPoint, Android JSON Parser](https://www.tutorialspoint.com/android/android_json_parser.htm)
+	*	[CuriousConcept, json formatter](https://jsonformatter.curiousconcept.com/)
+
+*	Manifests
+	*	[Stack Overflow, disable landscpe mode](http://stackoverflow.com/a/582585/5584850)
+
+*	Regular Expression
+	*	[Oracle Docs, Class Pattern](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+	*	[TutorialsPoint, Java Regex](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
+	*	[CSDN leesren, Java正则表达式转义](http://blog.csdn.net/csr0312/article/details/17016709)
+
+*	Release
+	*	[Stack Overflow, create a keystore](http://stackoverflow.com/questions/3997748/how-can-i-create-a-keystore)
+	*	[Android Devloper Doc, publish/app-signing](https://developer.android.com/studio/publish/app-signing.html)
+
+*	Spinner
+	*	[泡网, Android Spinner控件详解](http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0105/2264.html)
+
+*	TextView
+	*	[Stack Overflow, setTextSize()](http://stackoverflow.com/questions/11590538/dpi-value-of-default-large-medium-and-small-text-views-android)
+	*	[马会东, setTextSize()](http://www.cnblogs.com/duanweishi/p/4449588.html)
