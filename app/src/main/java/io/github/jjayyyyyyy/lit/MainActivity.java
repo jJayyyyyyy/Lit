@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     if(hasNetwork()){
                         new WeatherAsyncTask().execute(cityList.get(pos-1));
                     }else {
-                        Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "警告！手机将在10秒后爆炸！", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }else {
-                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "BANG!!!", Toast.LENGTH_SHORT).show();
                 }
                 return false;
             }
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent hackerNewsIntent = new Intent(MainActivity.this, HackerNewsActivity.class);
                     startActivity(hackerNewsIntent);
                 }else {
-                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "别戳我，还没联网呢", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent solidotIntent = new Intent(MainActivity.this, SolidotActivity.class);
                     startActivity(solidotIntent);
                 }else {
-                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Life is short, you need Python", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent newsflashIntent = new Intent(MainActivity.this, NewsflashActivity.class);
                     startActivity(newsflashIntent);
                 }else {
-                    Toast.makeText(getApplicationContext(), "No Network", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "  Verweile doch\nDu bist so schön", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -217,6 +217,8 @@ public class MainActivity extends AppCompatActivity {
                     if (transList.size() == 1) {
                         translation.setText(transList.get(0));
                     }
+                }else{
+                    Toast.makeText(getApplicationContext(), "再试一次~", Toast.LENGTH_SHORT).show();
                 }
             }
         }
